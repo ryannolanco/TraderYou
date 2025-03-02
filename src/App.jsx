@@ -1,10 +1,11 @@
 import './App.css'
+import TradingDataGrid from './components/trading-data/TradingDataGrid'
 
 function App() {
  
 
   return (
-    <div>Hello</div>
+    <TradingDataGrid />
   )
 }
 
