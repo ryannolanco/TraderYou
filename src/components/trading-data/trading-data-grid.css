@@ -1,12 +1,12 @@
 .trading-data-grid-container {
+  margin-top: 1rem;
   display: grid;
 	grid-template-columns: repeat(2, 1fr);
-  background-color: aqua;
-  gap: 10px;
-  height: 330px;
+  gap: .2rem;
 }
 
 .draggable {
-  height: 100px;
+  height: 12rem;
   background-color: beige;
+  border-radius: 6px;
 }
