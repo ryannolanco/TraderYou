@@ -1,0 +1,16 @@
+
+.drop-zone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.drop-zone {
+  border: 2px solid black; /* Corrected syntax */
+  height: 20rem;
+  width: auto;
+  display: flex; /* Optional, for centering content */
+  align-items: center; /* Optional, centers content vertically */
+  justify-content: center; /* Optional, centers content horizontally */
+}
