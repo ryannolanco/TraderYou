@@ -7,10 +7,10 @@
 }
 
 .drop-zone {
-  border: 2px solid black; /* Corrected syntax */
+  border: 2px solid black;
   height: 20rem;
   width: auto;
-  display: flex; /* Optional, for centering content */
-  align-items: center; /* Optional, centers content vertically */
-  justify-content: center; /* Optional, centers content horizontally */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
 }
