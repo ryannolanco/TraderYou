@@ -1,14 +1,20 @@
-import React from 'react'
-import TradingDataGrid from '../trading-data/TradingDataGrid'
-import NavBar from '../navigation/NavBar'
+import React from "react";
+import TradingDataGrid from "../trading-data/TradingDataGrid";
+import NavBar from "../navigation/NavBar";
+
+import "./landing-page.css";
+import WeekdayData from "../weekday-data/weekdayData";
 
 const LandingPage = () => {
   return (
-    <div>
+    <>
       <NavBar />
-      <TradingDataGrid />
-    </div>
-  )
-}
+      <div className="landing-page-container">
+        <WeekdayData />
+        <TradingDataGrid />
+      </div>
+    </>
+  );
+};
 
-export default LandingPage
+export default LandingPage;

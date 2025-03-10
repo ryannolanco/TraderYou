@@ -2,13 +2,14 @@ import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 import "./file-drop.css";
+import NavBar from "../navigation/NavBar";
 
 const FileDrop = () => {
   const [tradingFile, setTradingFile] = useState()
 
   
   const parseCSV = (csvString) => {
-    const [headerLine, ...lines] = csvString.trim().split("\n"); // Split CSV into lines
+    const lines = csvString.trim().split("\n").filter(line => line.trim() !== ""); // Split CSV into lines
     const headers = headerLine.split(",").map(header => header.trim()); // Extract headers
 
     return lines.map(line => {
@@ -47,6 +48,8 @@ const FileDrop = () => {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (
+    <>
+    <NavBar />
     <div className="drop-zone-container">
       <div {...getRootProps()}>
         <input {...getInputProps()} />
@@ -55,6 +58,7 @@ const FileDrop = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 
