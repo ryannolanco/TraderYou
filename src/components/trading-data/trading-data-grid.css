@@ -1,12 +1,40 @@
 .trading-data-grid-container {
-  margin-top: 1rem;
   display: grid;
 	grid-template-columns: repeat(2, 1fr);
-  gap: .2rem;
+  gap: 1em;
 }
 
 .draggable {
   height: 12rem;
   background-color: beige;
   border-radius: 6px;
+}
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) { 
+ 
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) { 
+ 
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .trading-data-grid-container {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
 }
