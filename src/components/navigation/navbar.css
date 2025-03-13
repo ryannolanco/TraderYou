@@ -9,19 +9,37 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media (min-width: 992px) {
   .navigation-container {
+    position: fixed;
+    left: 1rem;
+    top: 0;
+    height: 80vh;
     display: flex;
+    flex-direction: column;
+    background-color: rgb(15, 136, 136);
     list-style: none;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     margin-top: 2rem;
+    margin-left: 1rem;
+    border-radius: 10px;
   }
 
   .navigation-container a {
+    color: white;
     text-decoration: none;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
   }
+
+  .navigation-container a:hover {
+    color: rgb(141, 196, 196);
+  }
+
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 }
-

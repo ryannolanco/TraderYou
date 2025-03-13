@@ -18,6 +18,11 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
+    border: 6px rgb(105, 104, 104) solid;
+    box-shadow: 0 3px 5px 0 #47896A;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: rgb(211, 241, 199);
   }
   
   .weekday-item {
@@ -26,17 +31,24 @@
     align-items: center; 
     justify-content: flex-start; 
     
-    padding-top: 1rem;
-    border: 2px black solid;
+    padding-top: .8rem;
+    border: 5px rgb(147, 170, 138) solid;
+    background-color: rgb(220, 255, 206);
     width: 15rem;
     height: 15rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 5px 0 #47896A;
   }
   
   .weekday-item h6 {
+    font-size: 30px;
+    color: rgb(114, 93, 0);
+    background-color: rgb(255, 255, 255);
     width: 100%; 
     text-align: center; 
-    padding-bottom: 0.5rem; 
-    border-bottom: 2px black solid;
+    padding-bottom: 0.5rem;
+    border-bottom: 5px rgb(147, 170, 138) solid;
+
   }
 
 }

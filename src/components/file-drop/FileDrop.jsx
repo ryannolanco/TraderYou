@@ -8,13 +8,22 @@ const FileDrop = () => {
   const [tradingFile, setTradingFile] = useState();
 
   const parseCSV = (csvString) => {
+    let allData = []
     const lines = csvString
       .trim()
       .split("\n")
       .filter((line) => line.trim() !== ""); // Split CSV into lines
-    const headers = headerLine.split(",").map((header) => header.trim()); // Extract headers
 
-    return lines.map((line) => {
+      
+      lines.forEach((line) => {
+        if (line.includes(",") && line.trim() !== "") {
+          allData.push(line)
+        }
+      })
+ 
+    const headers = allData[0].split(",").map((header) => header.trim()); // Extract headers
+
+    return allData.map((line) => {
       const values = line.split(",").map((value) => value.trim());
       return headers.reduce((acc, header, index) => {
         acc[header] = values[index]; // Create object with key-value pairs
@@ -37,7 +46,7 @@ const FileDrop = () => {
       reader.onload = () => {
         const text = reader.result;
         const parsedData = parseCSV(text);
-        parsedData.forEach((item) => console.log(item.AMOUNT));
+        parsedData.forEach((item) => console.log(item));
         setTradingFile(parsedData);
       };
       reader.readAsText(file);
