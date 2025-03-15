@@ -8,28 +8,36 @@ const FileDrop = () => {
   const [tradingFile, setTradingFile] = useState();
 
   const parseCSV = (csvString) => {
-    let allData = []
     const lines = csvString
       .trim()
       .split("\n")
-      .filter((line) => line.trim() !== ""); // Split CSV into lines
+      .map((line) => line.trim()) // Remove extra spaces
+      .filter((line) => line !== ""); // Remove empty lines
+  
+    const sections = {};
+    let currentSection = null;
+    let headers = [];
+  
+    lines.forEach((line) => {
+      if (line === "Cash Balance" || line === "Account Order History" || line === "Account Trade History" || line === "Profits and Losses") {
+        currentSection = line;
+        sections[currentSection] = []; // Initialize the section
+        headers = []; // Reset headers for new section
+      } else if (currentSection && headers.length === 0) {
+        headers = line.split(",").map((h) => h.trim()); // Capture headers
+      } else if (currentSection) {
+        const values = line.split(",").map((v) => v.trim());
+        const rowObject = headers.reduce((obj, header, index) => {
+          obj[header] = values[index] || ""; // Assign values to headers
+          return obj;
+        }, {});
+        sections[currentSection].push(rowObject);
+      }
 
-      
-      lines.forEach((line) => {
-        if (line.includes(",") && line.trim() !== "") {
-          allData.push(line)
-        }
-      })
- 
-    const headers = allData[0].split(",").map((header) => header.trim()); // Extract headers
-
-    return allData.map((line) => {
-      const values = line.split(",").map((value) => value.trim());
-      return headers.reduce((acc, header, index) => {
-        acc[header] = values[index]; // Create object with key-value pairs
-        return acc;
-      }, {});
+  
     });
+  
+    return sections;
   };
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -45,12 +53,12 @@ const FileDrop = () => {
       reader.onerror = () => console.log("file reading has failed");
       reader.onload = () => {
         const text = reader.result;
+        console.log(text)
         const parsedData = parseCSV(text);
-        parsedData.forEach((item) => console.log(item));
+        console.log(parsedData)
         setTradingFile(parsedData);
       };
       reader.readAsText(file);
-      console.log(file);
     });
   }, []);
 
