@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: inherit;
+}
+
+html {
+	/* defines what 1rem is*/
+	font-size: calc(0.625rem + 0.5vw);
+}
+
+body {
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
