@@ -1,0 +1,48 @@
+.file-drop-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.drop-zone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 20rem;
+  padding: 3rem;
+
+  border: 2px solid black;
+  background-color: aqua;
+}
+
+.drop-zone {
+  padding: 1rem;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.drop-zone:hover {
+  background-color: rgb(18, 90, 90);
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

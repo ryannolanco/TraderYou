@@ -1,0 +1,43 @@
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .homepage-container {
+    margin: 2rem 10rem;
+  }
+}
+
+
+
+/* 
+
+TEMPLATE FOR CSS MEDIA QUERIES
+
+
+Small devices (portrait tablets and large phones, 600px and up)
+@media (min-width: 600px) { 
+
+}
+
+Medium devices (landscape tablets, 768px and up)
+@media (min-width: 768px) { 
+
+ 
+}
+
+Large devices (laptops/desktops, 992px and up)
+@media (min-width: 992px) { 
+
+
+}
+
+
+
+
+*/
