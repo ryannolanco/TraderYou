@@ -19,6 +19,9 @@ const NavBar = () => {
           <li className="navigaton-item">
             <Link to="/login">Login</Link>
           </li>
+          <li className="navigaton-item">
+            <Link to="/signup">Sign Up</Link>
+          </li>
       </ul>
     </nav>
   );
